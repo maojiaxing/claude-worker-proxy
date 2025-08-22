@@ -14,6 +14,8 @@ export class impl implements provider.Provider {
         headers.set('x-goog-api-key', apiKey)
         headers.set('Content-Type', 'application/json')
 
+        headers.delete('authorization')
+
         return new Request(finalUrl, {
             method: 'POST',
             headers,
